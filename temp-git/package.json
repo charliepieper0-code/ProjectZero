@@ -1,0 +1,43 @@
+{
+  "name": "project-zero",
+  "version": "0.6.2",
+  "description": "Project Zero PC horror survival game",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.11",
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "electron": "^39.8.10",
+    "electron-builder": "^26.18.0"
+  },
+  "build": {
+    "appId": "com.projectzero.game",
+    "productName": "PROJECT ZERO",
+    "asar": true,
+    "files": [
+      "index.html",
+      "main.js",
+      "package.json",
+      "node_modules/three/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  },
+  "allowScripts": {
+    "electron@39.8.10": true
+  }
+}
