@@ -1,15 +1,14 @@
 {
   "name": "project-zero",
-  "version": "0.9.5",
+  "version": "0.6.2",
   "description": "Project Zero PC horror survival game",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --win nsis",
-    "publish": "electron-builder --win nsis --publish always"
+    "dist": "electron-builder --win nsis"
   },
   "dependencies": {
-    "electron-updater": "^6.6.2",
+    "electron-updater": "^6.8.11",
     "three": "0.180.0"
   },
   "devDependencies": {
@@ -24,15 +23,7 @@
       "index.html",
       "main.js",
       "package.json",
-      "node_modules/**/*"
-    ],
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "charliepieper0-code",
-        "repo": "ProjectZero",
-        "releaseType": "release"
-      }
+      "node_modules/three/**/*"
     ],
     "win": {
       "target": [
@@ -47,7 +38,6 @@
     }
   },
   "allowScripts": {
-    "electron@39.8.10": true,
-    "electron-winstaller@5.4.0": true
+    "electron@39.8.10": true
   }
 }
